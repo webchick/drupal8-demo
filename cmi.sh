@@ -9,20 +9,22 @@
 # Move to the web root.
 cd ~/Sites
 
-# Grab latest Drupal 8 stable release.
-wget http://ftp.drupal.org/files/projects/drupal-8.0-alpha4.tar.gz
+# Set up a 'bare' working repo.
+rm -rf d8demo.git
+mkdir d8demo.git
+git init --bare --shared d8demo.git
+chgrp -R staff d8demo.git
 
-# Extract it to a 'prod' directory.
+# Make a 'prod' site.
 sudo rm -rf prod
-mkdir prod
+git clone file:///Users/webchick/Sites/d8demo.git prod
+wget http://ftp.drupal.org/files/projects/drupal-8.0-alpha4.tar.gz
 tar -zxvf drupal-8.0-alpha4.tar.gz -C ./prod --strip-components=1
-
-# Initalize prod as a git repo.
 cd prod
-git init
 git add .
 git commit -m "Initial commit: Add all the D8 code files."
-
+git push origin master
+ 
 # @TODO: Patches?
 
 # Install Drupal 8: prod.
@@ -33,19 +35,21 @@ drush si --db-url=mysql://root:@127.0.0.1:33066/prod --account-pass=admin -y
 echo "
 \$conf['system.site']['name'] = 'Production';" | sudo tee -a sites/default/settings.php
 
-# Hit the front page to prime the caches and generate compiled PHP.
-wget -q http://prod.localhost:8082/
+# Clear zee cache.
+drush cc all
 
 # Add the new files to Git.
 git add sites/default/files/config_*
 git add sites/default/files/php/service_container/.htaccess 
 git add sites/default/files/php/twig/.htaccess 
 git commit -m "Add CMI and compiled PHP files after initial installation."
+git push
 
 # Now, make the dev site, based on prod.
 cd ~/Sites
 sudo rm -rf dev
-git clone file:///Users/webchick/Sites/prod dev
+git clone file:///Users/webchick/Sites/d8demo.git dev
+cd dev
 
 # Copy over the database.
 mysql -e "DROP DATABASE IF EXISTS dev; CREATE DATABASE dev;"
