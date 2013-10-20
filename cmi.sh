@@ -69,6 +69,11 @@ export CONFIG_DIR=`find sites/default/files -type d -name "config*"`
 mkdir `echo $CONFIG_DIR`/active_dev
 mkdir `echo $CONFIG_DIR`/staging_dev
 cp -r `echo $CONFIG_DIR`/active/* `echo $CONFIG_DIR`/active_dev/
+cp -r `echo $CONFIG_DIR`/staging/* `echo $CONFIG_DIR`/staging_dev/
+git add `echo $CONFIG_DIR`/active_dev
+git add `echo $CONFIG_DIR`/staging_dev 
+git commit -m "Adding dev CMI files."
+git push origin master
  
 # Clear zee cache.
 drush cc all
