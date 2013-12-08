@@ -2,7 +2,7 @@
 
 # @TODO: Variable-ize this up.
 #WEBROOT="/Users/webchick/Sites"
-#RELEASE="8.0-alpha4"
+#RELEASE="8.0-alpha6"
 #PROD="prod"
 #DEV="dev"
 
