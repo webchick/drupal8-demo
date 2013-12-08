@@ -18,8 +18,8 @@ chgrp -R staff d8demo.git
 # Make a 'prod' site.
 sudo rm -rf prod
 git clone file:///Users/webchick/Sites/d8demo.git prod
-wget http://ftp.drupal.org/files/projects/drupal-8.0-alpha4.tar.gz
-tar -zxvf drupal-8.0-alpha4.tar.gz -C ./prod --strip-components=1
+wget http://ftp.drupal.org/files/projects/drupal-8.0-alpha6.tar.gz
+tar -zxvf drupal-8.0-alpha6.tar.gz -C ./prod --strip-components=1
 cd prod
 git add .
 git commit -m "Initial commit: Add all the D8 code files."
