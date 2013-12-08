@@ -1,0 +1,41 @@
+- Mobile navigation.
+  - [D7] Squish down browser window, show how toolbar stacks on top of itself.
+  - [D8] Squish down browser window, show how toolbar flips orientation, then
+         changes to icons at an even smaller size.
+
+- Content creation.
+  - [D7]:
+    - node/add/article.
+    - Fill in content: "Hey, look! It's <strong>Lily!</strong>"
+    - Scroll down, upload picture.
+    - Copy/paste URL and manually insert <img> tag/link.
+    - Full HTML!
+    - Note how form endlessly scrolls, everything looks important.
+    - Ew, two copies of the image.
+
+  - [D8]:
+    - node/add/article.
+    - Note that optional settings are put off to the side.
+    - Fill in content. OH LOOK, WYSIWYG. :)
+    - Upload picture in WYSIWYG, enter alt text.
+    - FULL HTML!!!
+    - Show responsiveness.
+
+- Editing:
+  - [D7]:
+    - Edit tab.
+    - Note that you are on something that doesn't look like your content.
+    - Try to preview. Same content. Twice. In admin theme.
+
+  - [D8]:
+    - Click "Edit" icon. Note the pencils appear for contextual links.
+    - Click into field. Change it. Save. DONE.
+    - Turn off Quick Edit mode.
+
+- Responsive Preview
+  - [D8]: NOT in core!
+    - On the topic of preview...
+    - Click on mobile phone drop-down and select one.
+    - Switch orientation
+    - Scroll up/down.
+    - Try another.
