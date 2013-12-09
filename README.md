@@ -1,4 +1,4 @@
-Drupal 8 Demo Script
+Showing off Drupal 8
 ====================
 
 So. You want to show off Drupal 8 to your local user group/camp/company/etc? Here's just what you need! This consists of a presentation, demo script, and hopefully eventually some hands-on exercises you can get people to do.
@@ -83,3 +83,12 @@ This script compares/contrasts D7 vs. D8. You may or may not want to do that in 
     - Switch to command line, cd into DEV wwwroot, run "git diff" to see the changes. Commit them.
   - On **PROD**:
     - Repeat above steps. You should see the view show up! Oooh, ahhh...
+
+
+### Web Services (D8 only; TODO... conceptual/hand-waving code is in https://github.com/webchickenator/d8ws/tree/full-metal-handwaving)
+  - Conceptually, on DEV:
+    - Enable all of the various RESTful modules
+    - Add a REST export to Front page view.
+    - Create a Cordova/jQuery Mobile app that hits that URL and allows you to add/edit the things and post them back.
+    - Demo it!
+    - Deploy it to PROD! :)
