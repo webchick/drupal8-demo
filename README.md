@@ -26,9 +26,9 @@ This script compares/contrasts D7 vs. D8. You may or may not want to do that in 
 
 ### Mobile navigation
 
-  - ### D7:
+  - #### D7:
     - Squish down browser window, show how toolbar stacks on top of itself.
-  - ### D8:
+  - #### D8:
     - Squish down browser window, show how toolbar flips orientation, then changes to icons at an even smaller size.
 
 ### Content creation
@@ -60,7 +60,7 @@ This script compares/contrasts D7 vs. D8. You may or may not want to do that in 
     - Click into field. Change it. Save. DONE.
     - Turn off Quick Edit mode.
 
-#### Responsive Preview
+### Responsive Preview
   - #### D8 (note: this is NOT in core!)
     - On the topic of preview...
     - Click on mobile phone drop-down and select one.
