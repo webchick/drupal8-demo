@@ -2,7 +2,7 @@
 
 # @TODO: Variable-ize this up.
 #WEBROOT="/Users/webchick/Sites"
-#RELEASE="8.0-alpha6"
+#RELEASE="8.x-dev"
 #PROD="prod"
 #DEV="dev"
 
@@ -18,14 +18,22 @@ chgrp -R staff d8demo.git
 # Make a 'prod' site.
 sudo rm -rf prod
 git clone file:///Users/webchick/Sites/d8demo.git prod
-wget http://ftp.drupal.org/files/projects/drupal-8.0-alpha6.tar.gz
-tar -zxvf drupal-8.0-alpha6.tar.gz -C ./prod --strip-components=1
+wget http://ftp.drupal.org/files/projects/drupal-8.x-dev.tar.gz
+tar -zxvf drupal-8.x-dev.tar.gz -C ./prod --strip-components=1
 cd prod
 git add .
 git commit -m "Initial commit: Add all the D8 code files."
 git push origin master
  
 # @TODO: Patches?
+wget https://drupal.org/files/issues/responsive-preview-1741498-382.patch
+git apply --index responsive-preview-1741498-382.patch
+git commit -am "Applying responsive preview patch."
+
+wget https://drupal.org/files/issues/dropbutton-style-1989470-21.patch
+git apply --index dropbutton-style-1989470-21.patch
+git commit -am "Making more nicerer dropbuttons."
+
 
 # Install Drupal 8: prod.
 mysql -e "DROP DATABASE IF EXISTS prod; CREATE DATABASE prod;"
