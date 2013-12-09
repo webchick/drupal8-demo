@@ -60,11 +60,26 @@ This script compares/contrasts D7 vs. D8. You may or may not want to do that in 
     - Click into field. Change it. Save. DONE.
     - Turn off Quick Edit mode.
 
-### Responsive Preview (*not* in core!)
-  - #### D8:
-    - On the topic of preview...
-    - Click on mobile phone drop-down and select one.
-    - Switch orientation
-    - Scroll up/down.
-    - Try another.
-  - 
+### Responsive Preview (D8 only; *not* in core!)
+  - On the topic of preview...
+  - Click on mobile phone drop-down and select one.
+  - Switch orientation
+  - Scroll up/down.
+  - Try another.
+
+### CMI (D8 only)
+  - On **DEV**:
+    - Go to admin/config/system/site-information and add a slogan.
+    - Go to admin/config/development/configuration, click Full Import/Export, export button to download.
+    - Switch to command line, cd into DEV wwwroot, run "git diff" to see the changes. Commit them.
+  - On **PROD**:
+    - Go to admin/config/development/configuration and upload the tarball you just exported.
+    - Click on "View differences" to show they match up with what was in Git.
+    - Click "Import all" aaaaand... slogan change!
+    - Switch to command line, cd into PROD wwwroot, run "git diff" to see the changes. Commit them.
+  - On **DEV**:
+    - Now for something fancier: Create a content type, add a field, create a page view (WITH MENU LINK) of that content type.
+    - Go to admin/config/development/configuration, click Full Import/Export, export button to download.
+    - Switch to command line, cd into DEV wwwroot, run "git diff" to see the changes. Commit them.
+  - On **PROD**:
+    - Repeat above steps. You should see the view show up! Oooh, ahhh...
