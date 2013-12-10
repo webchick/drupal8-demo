@@ -27,6 +27,10 @@ Pre-requisites
 4. Open two more browser tabs, one at PROD and one at DEV.
 5. Fire up Xcode and get the iPhone simulator working.
 6. Download [Vancouver.jpg](https://github.com/webchickenator/drupal8-demo/blob/master/Vancouver.jpg) or your own (big!) image of choice to your desktop or whatever.
+7. **LOG IN** to all the sites, on both desktop + mobile.
+
+For best results, *three desktops*: 1) presentation, 2) browser w/ D7 / D8 prod / D8 dev tabs, 3) iOS+Terminal
+
 
 Drupal 8 Demo script
 -----
