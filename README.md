@@ -35,36 +35,36 @@ If you're less presentation-inclined, or you want to break up all the yammering 
 
 This script compares/contrasts D7 vs. D8. You may or may not want to do that in your own demo, preferring instead to just stick to Drupal 8. Up to you.
 
-### Mobile navigation
-  - #### D7:
-    - Squish down browser window, show how toolbar stacks on top of itself.
-
-  - #### D8:
-    - Squish down browser window, show how toolbar flips orientation, then changes to icons at an even smaller size.
 
 ### Content creation
   - #### D7:
     - node/add/article.
-    - Fill in content: "Hey, look! It's <strong>Lily!</strong>"
-    - Scroll down, upload picture.
-    - Copy/paste URL and manually insert <img> tag/link.
-    - Full HTML!
+    - Fill in content:
+      - **Title**: "It's Vancouver!"
+      - **Tags**: mountains, ocean
+      - **Body**: Here's the city of <strong>Vancver</strong> in all of its splendor! (note: typo on purpose :))
+      - Come visit us anytime!
+    - Scroll down to **Image**, upload picture.
+    - Copy/paste URL and manually insert <img> tag.
     - Note how form endlessly scrolls, everything looks important.
-    - Ew, two copies of the image.
+    - Picture not showing up in body... remember to select Full HTML!
+    - Save!
+    - Oh no! Two copies of the image, one is HUGE. :(
 
   - #### D8:
     - node/add/article.
-    - Note that optional settings are put off to the side.
-    - Fill in content. OH LOOK, WYSIWYG. :)
+    - New content creation page! Note that optional settings are put off to the side.
+    - Fill in content, as above. (REMEMBER THE TYPO!)
+    - OH LOOK, WYSIWYG. :) Show off that bold button!
     - Upload picture in WYSIWYG, enter alt text, check off caption box.
-    - Enter caption, hit enter.
-    - Show responsiveness. (REQUIRES CHROME!)
+    - Enter caption "Vancouver, BC, Canada", hit enter.
+    - Done-zo! Save.
 
 ### Content Editing
   - #### D7:
-    - Edit tab.
-    - Note that you are on something that doesn't look like your content.
-    - Try to preview. Same content. Twice. In admin theme.
+    - Now let's fix the typo. Go to the Edit tab.
+    - Note that you are on something that doesn't look at all like your content.
+    - Try to preview. Same content. Twice. In admin theme. :\
 
   - #### D8:
     - Click "Edit" icon. Note the pencils appear for contextual links.
@@ -77,6 +77,15 @@ This script compares/contrasts D7 vs. D8. You may or may not want to do that in 
   - Switch orientation
   - Scroll up/down.
   - Try another.
+
+
+### Mobile navigation
+  - #### D7:
+    - Squish down browser window, show how toolbar stacks on top of itself.
+
+  - #### D8:
+    - Squish down browser window, show how toolbar flips orientation, then changes to icons at an even smaller size.
+
 
 ### CMI (D8 only)
   - On **DEV**:
