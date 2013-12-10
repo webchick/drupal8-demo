@@ -15,12 +15,20 @@ Grab a copy of it from File > Download As...
 
 Note that this presentation is very long and detailed and gets into the weeds a lot. It is therefore **highly recommended** that you edit it down to fit into your specific timeframe/audience in a "real" presentation software.
 
+Pre-requisites
+----
+1. Download and edit the [cmi.sh](https://raw.github.com/webchickenator/drupal8-demo/master/cmi.sh) script to set up a local dev/prod Drupal 8 site, along with some patches of features not yet committed to core. You will need particularly this if you want to demo CMI. If you don't, you can still use it and then just do all of the below things on the production site. (These are all to be done on the production site unless otherwise specified.)
+
+2. Open two shell prompts one in the DEV webroot and one in the PROD web root, and set their background colours to two very different settings so that it's clear which is which. (I use "homebrew" for dev and "grass" for prod, personally)
+
+3. Download and install Drupal 7, and point a browser tab at it.
+4. Open two more browser tabs, one at DEV and one at PROD.
+5. Fire up Xcode and get the iPhone simulator working.
+
+
 Drupal 8 Demo script
 -----
 If you're less presentation-inclined, or you want to break up all the yammering with some actual demo stuff, this section is for you. Here are a variety of recommended walkthroughs for you.
-
-### Pre-requisites
-Download and edit the [cmi.sh](https://raw.github.com/webchickenator/drupal8-demo/master/cmi.sh) script to set up a local dev/prod Drupal 8 site, along with some patches of features not yet committed to core. You will need particularly this if you want to demo CMI. If you don't, you can still use it and then just do all of the below things on the production site. (These are all to be done on the production site unless otherwise specified.)
 
 This script compares/contrasts D7 vs. D8. You may or may not want to do that in your own demo, preferring instead to just stick to Drupal 8. Up to you.
 
@@ -69,6 +77,7 @@ This script compares/contrasts D7 vs. D8. You may or may not want to do that in 
 
 ### CMI (D8 only)
   - On **DEV**:
+    - First, the simple case: deploy a site slogan.
     - Go to admin/config/system/site-information and add a slogan.
     - Go to admin/config/development/configuration, click Full Import/Export, export button to download.
     - Switch to command line, cd into DEV wwwroot, run "git diff" to see the changes. Commit them.
