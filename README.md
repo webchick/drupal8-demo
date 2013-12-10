@@ -22,10 +22,11 @@ Pre-requisites
 
 2. Open two shell prompts one in the DEV webroot and one in the PROD web root, and set their background colours to two very different settings so that it's clear which is which. (I use "homebrew" for dev and "grass" for prod, personally)
 
-3. Download and install Drupal 7, and point a browser tab at it. Make sure the name of it is "DRUPAL 7" and it uses some weird Bartik colour scheme to easily tell it apart.
-4. Open two more browser tabs, one at DEV and one at PROD.
+3. Download and install Drupal 7, and point a browser tab at it: drush si --account-pass=admin --site-name="Drupal 7" -y
+
+4. Open two more browser tabs, one at PROD and one at DEV.
 5. Fire up Xcode and get the iPhone simulator working.
-6. Download [Vancouver.jpg](https://github.com/webchickenator/drupal8-demo/blob/master/Vancouver.jpg) or your own (big!) image of choice.
+6. Download [Vancouver.jpg](https://github.com/webchickenator/drupal8-demo/blob/master/Vancouver.jpg) or your own (big!) image of choice to your desktop or whatever.
 
 Drupal 8 Demo script
 -----
