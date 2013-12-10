@@ -34,6 +34,10 @@ wget https://drupal.org/files/issues/dropbutton-style-1989470-21.patch
 git apply --index dropbutton-style-1989470-21.patch
 git commit -am "Making more nicerer dropbuttons."
 
+wget https://drupal.org/files/issues/edit-title-fix-16.patch
+git apply --index edit-title-fix-16.patch
+git commit -am "Fixing bug with node title in-place editing."
+
 
 # Install Drupal 8: prod.
 mysql -e "DROP DATABASE IF EXISTS prod; CREATE DATABASE prod;"
