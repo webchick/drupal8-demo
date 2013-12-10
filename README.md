@@ -76,18 +76,22 @@ This script compares/contrasts D7 vs. D8. You may or may not want to do that in 
 ### Mobile navigation
   - #### D7:
     - Squish down browser window, show how toolbar stacks on top of itself.
+    - Open in iOS simulator. OH DEAR GOD NO. Website is *tiny*... Picture breaking layout.
+    - Zoom in, demonstrate how toolbar takes up 7/8ths of the screen
 
   - #### D8:
     - Squish down browser window, show how toolbar flips orientation, then changes to icons at an even smaller size.
-    - Note responsive images
+    - Note responsive images resizing as well.
+    - Open in iOS simulator, demonstrate toolbar icons + quick edit works.
 
 
 ### Responsive Preview (D8 only; *not* in core!)
   - On the topic of preview...
-  - Click on mobile phone drop-down and select one.
+  - Click on mobile phone drop-down and select one (iPhone 5).
   - Switch orientation
   - Scroll up/down.
-  - Try another.
+  - Try another (Nexus 4).
+  - Show config page that lets you define your own.
 
 
 
