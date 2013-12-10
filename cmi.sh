@@ -30,9 +30,10 @@ wget https://drupal.org/files/issues/responsive-preview-1741498-382.patch
 git apply --index responsive-preview-1741498-382.patch
 git commit -am "Applying responsive preview patch."
 
-wget https://drupal.org/files/issues/dropbutton-style-1989470-21.patch
-git apply --index dropbutton-style-1989470-21.patch
-git commit -am "Making more nicerer dropbuttons."
+# Still too buggy for now...
+#wget https://drupal.org/files/issues/dropbutton-style-1989470-21.patch
+#git apply --index dropbutton-style-1989470-21.patch
+#git commit -am "Making more nicerer dropbuttons."
 
 wget https://drupal.org/files/issues/edit-title-fix-16.patch
 git apply --index edit-title-fix-16.patch
@@ -43,9 +44,9 @@ git commit -am "Fixing bug with node title in-place editing."
 mysql -e "DROP DATABASE IF EXISTS prod; CREATE DATABASE prod;"
 drush si --db-url=mysql://root:@127.0.0.1:33066/prod --account-pass=admin -y
 
-# Hard-code site name as "Production" to differentiate between sites. 
+# Hard-code site name to differentiate between sites. 
 echo "
-\$conf['system.site']['name'] = 'Production';" | sudo tee -a sites/default/settings.php
+\$conf['system.site']['name'] = 'Drupal 8';" | sudo tee -a sites/default/settings.php
 
 # Clear zee cache.
 drush cc all
@@ -73,7 +74,7 @@ echo "
 \$databases['default']['default']['database'] = 'dev';
 \$config_directories['active']['path'] .= '_dev';
 \$config_directories['staging']['path'] .= '_dev';
-\$conf['system.site']['name'] = 'Dev';
+\$conf['system.site']['name'] = 'Drupal 8 [Dev]';
 " | sudo tee -a sites/default/settings.php
 
 # Copy over the prod config files to dev's directories.
