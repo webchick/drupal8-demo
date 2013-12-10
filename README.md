@@ -84,7 +84,7 @@ This script compares/contrasts D7 vs. D8. You may or may not want to do that in 
   - On **DEV**:
     - First, the simple case: deploy a site slogan.
     - Go to admin/config/system/site-information and add a slogan.
-    - Go to admin/config/development/configuration, click Full Import/Export, export button to download.
+    - Go to admin/config/development/configuration, click Single Import/Export, "Simple configuration," "system.site," Export button to download.
     - Switch to command line, cd into DEV wwwroot, run "git diff" to see the changes. Commit them.
   - On **PROD**:
     - Go to admin/config/development/configuration and upload the tarball you just exported.
