@@ -26,6 +26,8 @@ Pre-requisites
 4. Open two more browser tabs, one at DEV and one at PROD.
 5. Fire up Xcode and get the iPhone simulator working.
 
+Temp. 6: Roll back the dropbutton patch on dev, since it looks silly on admin/structure/types, but looks great on node/1/edit.
+
 
 Drupal 8 Demo script
 -----
