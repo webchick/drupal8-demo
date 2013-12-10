@@ -25,9 +25,7 @@ Pre-requisites
 3. Download and install Drupal 7, and point a browser tab at it. Make sure the name of it is "DRUPAL 7" and it uses some weird Bartik colour scheme to easily tell it apart.
 4. Open two more browser tabs, one at DEV and one at PROD.
 5. Fire up Xcode and get the iPhone simulator working.
-
-Temp. 6: Roll back the dropbutton patch on dev, since it looks silly on admin/structure/types, but looks great on node/1/edit.
-
+6. Download [Vancouver.jpg](https://github.com/webchickenator/drupal8-demo/blob/master/Vancouver.jpg) or your own (big!) image of choice.
 
 Drupal 8 Demo script
 -----
