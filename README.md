@@ -56,9 +56,9 @@ This script compares/contrasts D7 vs. D8. You may or may not want to do that in 
     - node/add/article.
     - Note that optional settings are put off to the side.
     - Fill in content. OH LOOK, WYSIWYG. :)
-    - Upload picture in WYSIWYG, enter alt text.
-    - FULL HTML!!!
-    - Show responsiveness.
+    - Upload picture in WYSIWYG, enter alt text, check off caption box.
+    - Enter caption, hit enter.
+    - Show responsiveness. (REQUIRES CHROME!)
 
 ### Content Editing
   - #### D7:
@@ -90,7 +90,7 @@ This script compares/contrasts D7 vs. D8. You may or may not want to do that in 
     - Click "Import all" aaaaand... slogan change!
     - Switch to command line, cd into PROD wwwroot, run "git diff" to see the changes. Commit them.
   - On **DEV**:
-    - Now for something fancier: Create a content type, add a field, create a page view (WITH MENU LINK) of that content type.
+    - Now for something fancier: Create a content type (named something alphabetically later than "H" so that it shows up after "Home" :)), add a field, create a page view (WITH MENU LINK) of that content type.
     - Go to admin/config/development/configuration, click Full Import/Export, export button to download.
     - Switch to command line, cd into DEV wwwroot, run "git diff" to see the changes. Commit them.
   - On **PROD**:
