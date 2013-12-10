@@ -68,15 +68,9 @@ This script compares/contrasts D7 vs. D8. You may or may not want to do that in 
 
   - #### D8:
     - Click "Edit" icon. Note the pencils appear for contextual links.
-    - Click into field. Change it. Save. DONE.
+    - Click into Body field. Change it.
+    - Click into Tags field, add more tags ("awesomeness"). Save. DONE.
     - Turn off Quick Edit mode.
-
-### Responsive Preview (D8 only; *not* in core!)
-  - On the topic of preview...
-  - Click on mobile phone drop-down and select one.
-  - Switch orientation
-  - Scroll up/down.
-  - Try another.
 
 
 ### Mobile navigation
@@ -85,6 +79,16 @@ This script compares/contrasts D7 vs. D8. You may or may not want to do that in 
 
   - #### D8:
     - Squish down browser window, show how toolbar flips orientation, then changes to icons at an even smaller size.
+    - Note responsive images
+
+
+### Responsive Preview (D8 only; *not* in core!)
+  - On the topic of preview...
+  - Click on mobile phone drop-down and select one.
+  - Switch orientation
+  - Scroll up/down.
+  - Try another.
+
 
 
 ### CMI (D8 only)
