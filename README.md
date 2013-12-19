@@ -127,45 +127,64 @@ This script compares/contrasts D7 vs. D8. You may or may not want to do that in 
     - Demo it!
     - Deploy it to PROD! :)
 
-### General code changes
-The Pants module is a nice example of a D7 "before and after" to D8 port which exercises most of the major APIs.  It includes a detailed commit log that explains all the steps taken one by one, along with references to the relevant issue summaries.
+Showing off D8 code changes
+----------------------------
+The [Pants module](https://drupal.org/project/pants) is a nice example of a D7 "before and after" to D8 port which exercises most of the major APIs.  It includes a detailed commit log that explains all the steps taken one by one, along with references to the relevant issue summaries.
 
-Here are some relevant commitdiffs for showing off the new changes in D8.
+Features:
+* A checkbox on the user profile to take your pants on or off (provided by Field API + hook_form_alter())
+* Display of user's pants status on their user profile (provided by User API)
+* A small template file (converted to Twig in D8) to output the pants.
+* A set of "pants plugins" (provided by CTools in D7 and the D8 Plugin system in D8) to change what type of pants are displayed (bellbottoms, MC hammer pants..)
+* Two Blocks: one that's a listing of recent pants status changes (which gets converted to a View in D8) and one that contains an AJAX callback to instantly de-pants (for a simple Router system conversion).
+* Maybe some other stuff I forget. :P
 
-1. Get D7 and D8 versions of the Pants module:
+## Getting started
+Here's how to grab the latest D7 and D8 versions of the Pants module:
 git clone --branch 7.x-1.x http://git.drupal.org/project/pants.git
 git clone --branch 8.x-a4 http://git.drupal.org/project/pants.git
 
-2. See a log of all the things that were converted in the process of porting:
+**NOTE**: "a4" means that this branch of code works with 8.x-alpha4. That's ~October 2013. Co-maintainers to chase HEAD welcome. ;)
+
+## Overview of porting steps
+See a log of all the things that were converted in the process of porting:
+
 http://drupalcode.org/project/pants.git/shortlog/9dfb670105b1bae26163e002419e5a0aa3a6d00d
 
-3. Specific diffs of some of the larger changes:
+## Specific diffs of some of the larger API changes:
 
-.info files => .info.yml files http://drupalcode.org/project/pants.git/commitdiff/9358fe4626260693652192a299da2f8acbbae108
+###.info files => .info.yml files
 
-files[] => PSR-0 / PSR-4 for OO code: 
-http://drupalcode.org/project/pants.git/commitdiff/4a11b2c1f4b0b476e7e3ad80ebc587310b7547f8
+* http://drupalcode.org/project/pants.git/commitdiff/9358fe4626260693652192a299da2f8acbbae108
 
-New routing system
-http://drupalcode.org/project/pants.git/commitdiff/683df063549a6a0cfc6923ca8f04866a0d84ee4b
+### files[] => PSR-0 / PSR-4 for OO code: 
 
-New OO form API:
-http://drupalcode.org/project/pants.git/commitdiff/852c96a4d5101d720b28ca8e29335bb2e052cb9f
+* http://drupalcode.org/project/pants.git/commitdiff/4a11b2c1f4b0b476e7e3ad80ebc587310b7547f8
 
-New configuration system:
-http://drupalcode.org/project/pants.git/commitdiff/b7cdd253b4a1e2fdfe4a5fcfd7702b85e2fc5950 http://drupalcode.org/project/pants.git/commitdiff/8053ac1714217f335146d5302dffd715e09fe176
+### New routing system:
 
-New OO field/entity API:
-http://drupalcode.org/project/pants.git/commitdiff/764dc69fe9408863c3f7faaddd2ad977994551b9
+* http://drupalcode.org/project/pants.git/commitdiff/683df063549a6a0cfc6923ca8f04866a0d84ee4b
 
-New plugins system:
-http://drupalcode.org/project/pants.git/commitdiff/0a3385132b03bebd501374a2840b005edc9405c4
-http://drupalcode.org/project/pants.git/commitdiff/96a85f994c145849cfc4ffffb246a7bf25753128
+### New OO form API:
 
-…as used on blocks:
-http://drupalcode.org/project/pants.git/commitdiff/963fe182d9dd781ed03f3d1c01d18bfe9d3e9463
+* http://drupalcode.org/project/pants.git/commitdiff/852c96a4d5101d720b28ca8e29335bb2e052cb9f
 
-Views as config entities:
-http://drupalcode.org/project/pants.git/commitdiff/6bcb751ad136fe00513df520ddf15afe435dc50e
+### New configuration system:
+
+* http://drupalcode.org/project/pants.git/commitdiff/b7cdd253b4a1e2fdfe4a5fcfd7702b85e2fc5950
+* http://drupalcode.org/project/pants.git/commitdiff/8053ac1714217f335146d5302dffd715e09fe176
+
+### New OO field/entity API:
+
+* http://drupalcode.org/project/pants.git/commitdiff/764dc69fe9408863c3f7faaddd2ad977994551b9
+
+### New plugin system:
+
+* http://drupalcode.org/project/pants.git/commitdiff/0a3385132b03bebd501374a2840b005edc9405c4
+* http://drupalcode.org/project/pants.git/commitdiff/96a85f994c145849cfc4ffffb246a7bf25753128
+* …as used on blocks: http://drupalcode.org/project/pants.git/commitdiff/963fe182d9dd781ed03f3d1c01d18bfe9d3e9463
+
+### Views as config entities:
+* http://drupalcode.org/project/pants.git/commitdiff/6bcb751ad136fe00513df520ddf15afe435dc50e
 
 
