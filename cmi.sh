@@ -81,8 +81,8 @@ mysqldump prod | mysql dev
 cp ../prod/sites/default/settings.php sites/default
 echo "
 \$databases['default']['default']['database'] = 'dev';
-\$config_directories['active']['path'] .= '_dev';
-\$config_directories['staging']['path'] .= '_dev';
+\$config_directories['active'] .= '_dev';
+\$config_directories['staging'] .= '_dev';
 \$conf['system.site']['name'] = 'Drupal 8 [Dev]';
 " | sudo tee -a sites/default/settings.php
 
