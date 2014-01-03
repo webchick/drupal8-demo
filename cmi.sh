@@ -18,9 +18,19 @@ chgrp -R staff d8demo.git
 # Make a 'prod' site.
 sudo rm -rf prod
 git clone file:///Users/webchick/Sites/d8demo.git prod
-wget http://ftp.drupal.org/files/projects/drupal-8.x-dev.tar.gz
-tar -zxvf drupal-8.x-dev.tar.gz -C ./prod --strip-components=1
 cd prod
+
+# Grab a "shallow copy" of the latest D8 code, since we just want the files, not# the whole history. Then blow away its .git folder so ours doesn't conflict.
+git clone --branch 8.x --depth 1 http://git.drupal.org/project/drupal.git dee-eight
+rm -rf dee-eight/.git
+
+# Move all of the D8 files into prod and destroy the temp folder.
+# @todo I could avoid all of this fuckery if git supported "svn export." :P
+shopt -s dotglob
+mv dee-eight/* .
+rmdir dee-eight
+
+# Now populate the prod Git repo.
 git add .
 git commit -m "Initial commit: Add all the D8 code files."
 git push origin master
