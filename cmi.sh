@@ -30,6 +30,10 @@ wget https://drupal.org/files/issues/responsive-preview-1741498-422.patch
 git apply --index responsive-preview-1741498-422.patch
 git commit -am "Applying responsive preview patch."
 
+wget https://drupal.org/files/issues/drupal8.config-site-uuid.28.patch
+git apply --index drupal8.config-site-uuid.28.patch
+git commit -am "Testing CMI site UUID patch."
+
 # Still too buggy for now...
 #wget https://drupal.org/files/issues/dropbutton-style-1989470-21.patch
 #git apply --index dropbutton-style-1989470-21.patch
