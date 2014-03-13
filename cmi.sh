@@ -45,9 +45,10 @@ git commit -m "Initial commit: Add all the D8 code files."
 git push origin master
  
 # @TODO: Patches?
-wget https://drupal.org/files/issues/responsive-preview-1741498-422.patch
-git apply --index responsive-preview-1741498-422.patch
-git commit -am "Applying responsive preview patch."
+# This one no longer applies and I don't really have time to screw with it, so commenting it out for now.
+#wget https://drupal.org/files/issues/responsive-preview-1741498-422.patch
+#git apply --index responsive-preview-1741498-422.patch
+#git commit -am "Applying responsive preview patch."
 
 # Install Drupal 8: prod.
 mysql -e "DROP DATABASE IF EXISTS prod; CREATE DATABASE prod;" -uroot -h127.0.0.1 -P33066
