@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Increment this as needed.
+export D8_RELEASE="drupal-8.0-alpha9"
+
 # @TODO: Variable-ize this up.
 #WEBROOT="/Users/webchick/Sites"
 #RELEASE="8.x-dev"
@@ -20,15 +23,21 @@ sudo rm -rf prod
 git clone file:///Users/webchick/Sites/d8demo.git prod
 cd prod
 
-# Grab a "shallow copy" of the latest D8 code, since we just want the files, not# the whole history. Then blow away its .git folder so ours doesn't conflict.
-git clone --branch 8.x --depth 1 http://git.drupal.org/project/drupal.git dee-eight
-rm -rf dee-eight/.git
+# Grab a "shallow copy" of the latest D8 code, since we just want the files, not
+# the whole history. Then blow away its .git folder so ours doesn't conflict.
+#git clone --branch 8.x --depth 1 http://git.drupal.org/project/drupal.git dee-eight
+#rm -rf dee-eight/.git
 
 # Move all of the D8 files into prod and destroy the temp folder.
 # @todo I could avoid all of this fuckery if git supported "svn export." :P
-shopt -s dotglob
-mv dee-eight/* .
-rmdir dee-eight
+#shopt -s dotglob
+#mv dee-eight/* .
+#rmdir dee-eight
+
+# Grab latest D8 release.
+wget http://ftp.drupal.org/files/projects/drupal-8.0-alpha9.tar.gz
+tar --strip-components=1 -zxvf drupal-8.0-alpha9.tar.gz
+rm drupal-8.0-alpha9.tar.gz
 
 # Now populate the prod Git repo.
 git add .
@@ -40,30 +49,20 @@ wget https://drupal.org/files/issues/responsive-preview-1741498-422.patch
 git apply --index responsive-preview-1741498-422.patch
 git commit -am "Applying responsive preview patch."
 
-wget https://drupal.org/files/issues/drupal8.config-site-uuid.28.patch
-git apply --index drupal8.config-site-uuid.28.patch
-git commit -am "Testing CMI site UUID patch."
-
-# Still too buggy for now...
-#wget https://drupal.org/files/issues/dropbutton-style-1989470-21.patch
-#git apply --index dropbutton-style-1989470-21.patch
-#git commit -am "Making more nicerer dropbuttons."
-
 # Install Drupal 8: prod.
-mysql -e "DROP DATABASE IF EXISTS prod; CREATE DATABASE prod;"
+mysql -e "DROP DATABASE IF EXISTS prod; CREATE DATABASE prod;" -uroot -h127.0.0.1 -P33066
 drush si --db-url=mysql://root:@127.0.0.1:33066/prod --account-pass=admin -y
 
 # Hard-code site name to differentiate between sites. 
 echo "
-\$conf['system.site']['name'] = 'Drupal 8';" | sudo tee -a sites/default/settings.php
+\$config['system.site']['name'] = 'Drupal 8';" | sudo tee -a sites/default/settings.php
 
 # Clear zee cache.
-drush cc all
+drush cache-rebuild
 
 # Add the new files to Git.
 git add sites/default/files/config_*
 git add sites/default/files/php/service_container/.htaccess 
-git add sites/default/files/php/twig/.htaccess 
 git commit -m "Add CMI and compiled PHP files after initial installation."
 git push
 
@@ -74,8 +73,8 @@ git clone file:///Users/webchick/Sites/d8demo.git dev
 cd dev
 
 # Copy over the database.
-mysql -e "DROP DATABASE IF EXISTS dev; CREATE DATABASE dev;"
-mysqldump prod | mysql dev
+mysql -e "DROP DATABASE IF EXISTS dev; CREATE DATABASE dev;" -uroot -h127.0.0.1 -P33066
+mysqldump  -uroot -h127.0.0.1 -P33066 prod | mysql -uroot -h127.0.0.1 -P33066 dev
 
 # Set the database/config directories for dev.
 cp ../prod/sites/default/settings.php sites/default
@@ -83,7 +82,7 @@ echo "
 \$databases['default']['default']['database'] = 'dev';
 \$config_directories['active'] .= '_dev';
 \$config_directories['staging'] .= '_dev';
-\$conf['system.site']['name'] = 'Drupal 8 [Dev]';
+\$config['system.site']['name'] = 'Drupal 8 [Dev]';
 " | sudo tee -a sites/default/settings.php
 
 # Copy over the prod config files to dev's directories.
@@ -98,5 +97,5 @@ git commit -m "Adding dev CMI files."
 git push origin master
  
 # Clear zee cache.
-drush cc all
+drush cache-rebuild
 
