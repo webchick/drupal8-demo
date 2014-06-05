@@ -52,6 +52,7 @@ This script compares/contrasts D7 vs. D8. You may or may not want to do that in 
     - Scroll down to **Image**, upload picture.
     - Copy/paste URL and manually insert <img> tag.
     - Note how form endlessly scrolls, everything looks important.
+    - Preview! (In your admin theme, twice. :P)
     - Picture not showing up in body... remember to select Full HTML!
     - Save!
     - Oh no! Two copies of the image, one is HUGE. :(
