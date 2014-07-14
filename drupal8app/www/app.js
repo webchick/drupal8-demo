@@ -1,13 +1,13 @@
 // Add parameter passing for view and edit pages.
 $(function () {
     $.mobile.paramsHandler.addPage("view", ["id"], [], 
-        function (urlVars) {
-            $("#paramdisplay").html(urlVars.id);
+        function (params) {
+            $("#nid").html(params.id);
         }
     );
     $.mobile.paramsHandler.addPage("edit", ["id"], [],
-        function (urlVars) {
-            $("#paramdisplayz").html(urlVars.id);
+        function (params) {
+            $("#nid").html(params.id);
         }
     );
 
