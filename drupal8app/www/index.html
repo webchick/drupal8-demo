@@ -17,37 +17,43 @@
   <div data-role="header" data-theme="b">
     <h1>Content</h1>
   </div>
-  <ul id="content-list" data-role="listview" data-filter="true" data-filter-placeholder="Search content..." data-inset="true" data-split-icon="edit">
-  </ul>
+  <div role="main" class="ui-content">
+    <ul id="content-list" data-role="listview" data-filter="true" data-filter-placeholder="Search content..." data-inset="true" data-split-icon="edit">
+    </ul>
+  </div>
 </div>
 
 <div data-role="page" id="view">
   <div data-role="header" data-theme="b">
     <h1>View</h1>
   </div>
+  <div role="main" class="ui-content">
 
-  <div id="nid"></div>
+    <div id="nid"></div>
 
-  <h2 id="title">Node Title</h2>
+    <h2 id="title">Node Title</h2>
 
-  <img id="image" src="http://placekitten.com/g/200/300" alt="Alt Text" />
+    <img id="image" src="http://placekitten.com/g/200/300" alt="Alt Text" />
 
-  <p id="body">
-  Lorem Ipsum etc.
-  </p>
+    <p id="body">
+      Lorem Ipsum etc.
+    </p>
 
-  <ul id="tags">
-  <li><a href="#">Kittens</a></li>
-  <li><a href="#">Cuteness</a></li>
-  </ul>
+    <ul id="tags">
+      <li><a href="#">Kittens</a></li>
+      <li><a href="#">Cuteness</a></li>
+    </ul>
+
+  </div>
 </div>
 
 <div data-role="page" id="edit">
   <div data-role="header" data-theme="b">
     <h1>Edit</h1>
   </div>
-  <div id="paramdisplayz"></div>
-  <p>TODO: Edit page.</p>
+  <div role="main" class="ui-content">
+    <p>TODO: Edit page.</p>
+  </div>
 </div>
 
 </body>
