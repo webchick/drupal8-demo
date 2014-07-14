@@ -1,3 +1,22 @@
+// Add parameter passing for view and edit pages.
+$(function () {
+    $.mobile.paramsHandler.addPage("view", ["id"], [], 
+        function (urlVars) {
+            $("#paramdisplay").html(urlVars.id);
+        }
+    );
+    $.mobile.paramsHandler.addPage("edit", ["id"], [],
+        function (urlVars) {
+            $("#paramdisplayz").html(urlVars.id);
+        }
+    );
+
+    $.mobile.paramsHandler.init();
+});
+
+$(document).on("pageinit", "#list", function( event ) {
+
+
 $.ajax({
   url: "http://8.x.local:8083/node",
   // Add custom header for HAL.
@@ -29,5 +48,6 @@ $.ajax({
   })
   .fail(function() {
     alert( "error" );
-  })
+  });
 
+});
